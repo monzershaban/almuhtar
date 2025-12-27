@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     siteName: "المختار للأثاث",
     images: [
       {
-        url: "https://www.almuhtar.com/assets/logo.png", // صورة احترافية لموقعك
+        url: "https://www.almuhtar.com/public/assets/logo.png", // صورة احترافية لموقعك
         width: 1200,
         height: 630,
         alt: "معرض المختار للأثاث التركي",
