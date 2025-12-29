@@ -36,9 +36,11 @@ export const metadata: Metadata = {
     "أثاث تركي فاخر", 
     "استيراد غرف نوم من تركيا", 
     "تجهيز صالونات حلاقة في تركيا", 
+    "مجموعة صالون حلاقة",
     "شحن أثاث من اسطنبول", 
     "وسيط تجاري في تركيا", 
     "مطابخ تركية عصرية",
+    "مطابخ",
     "تأثيث فلل ومشاريع",
     "اثاث",
     "موبيليا",
@@ -55,8 +57,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "المختار للأثاث | جودة التصنيع التركي والشحن العالمي",
-    description: "نوفر لك أفضل قطع الأثاث من المصانع التركية مباشرة إلى باب منزلك.",
+    title: "المختار للأثاث | أثاث فاخر بجودة عالية ",
+    description: "فريق متخصص لتوفير أفضل قطع الأثاث لمنزلك.",
     url: "https://www.almuhtar.com",
     siteName: "المختار للأثاث",
     images: [
@@ -64,7 +66,7 @@ export const metadata: Metadata = {
         url: "https://www.almuhtar.com/assets/logo.png", // صورة احترافية لموقعك
         width: 1200,
         height: 630,
-        alt: "معرض المختار للأثاث التركي",
+        alt: "معرض المختار للأثاث ",
       },
     ],
     locale: "ar_SA",
@@ -97,7 +99,7 @@ export default function RootLayout({
     "name": "المختار للأثاث",
     "url": "https://www.almuhtar.com",
     "logo": "https://www.almuhtar.com/logo.png",
-    "description": "شركة رائدة في وساطة وتصدير الأثاث والديكور من تركيا إلى دول العالم.",
+    "description": "فريق رائد في تصدير الأثاث إلى أنحاء العالم.",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+90-534-893-9441", // ضع رقمك الحقيقي
