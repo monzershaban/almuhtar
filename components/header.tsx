@@ -44,7 +44,7 @@ const Header: React.FC = () => {
           <div className="row-span-2 flex justify-start">
             <Image
               src={logo}
-              alt="المختار"
+              alt="المُخْتَار"
               width={60}
               height={20}
               className="object-contain select-none"
