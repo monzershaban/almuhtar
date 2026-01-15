@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; // ✅ replaced Lucide with React Icons
+import { FaBars, FaTimes, FaWhatsapp } from "react-icons/fa"; 
 import { Button } from "@/components/ui/button";
 import { siteContent } from "@/content";
 import Image from "next/image";
@@ -10,6 +10,11 @@ import logo from "@/public/assets/logo.png";
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // --- ضع رقم هاتفك هنا ---
+  const whatsappNumber = "+905348939441"; 
+  const whatsappMessage = encodeURIComponent("مرحباً، أود الاستفسار عن التصاميم.");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -38,9 +43,7 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-6 py-3">
-        {/* === Navbar Grid Layout === */}
         <nav className="grid grid-cols-2 md:grid-cols-3 justify-between items-center">
-          {/* === Left: Logo === */}
           <div className="row-span-2 flex justify-start">
             <Image
               src={logo}
@@ -52,7 +55,6 @@ const Header: React.FC = () => {
             />
           </div>
 
-          {/* === Center: Navigation Links === */}
           <ul className="hidden md:flex row-span-8 items-center justify-center gap-4 text-lg font-semibold tracking-wide">
             {navItems.map((item) => (
               <li key={item.id} className="relative group">
@@ -67,20 +69,20 @@ const Header: React.FC = () => {
             ))}
           </ul>
 
-          {/* === Right: CTA Button / Menu === */}
           <div className="row-span-2 flex justify-end items-center">
-            {/* Desktop CTA */}
+            {/* Desktop WhatsApp Button (Green) */}
             <div className="hidden md:block">
-              <Button
-                variant="accent"
-                size="lg"
-                onClick={() => scrollToSection("designs")}
-              >
-                {siteContent.header.ctaButton}
-              </Button>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center gap-2 border-none transition-all duration-300 shadow-sm hover:shadow-lg"
+                >
+                  <FaWhatsapp size={22} />
+                  تواصل معنا
+                </Button>
+              </a>
             </div>
 
-            {/* Mobile Menu Toggle */}
             <button
               className="md:hidden row-span-6 text-foreground"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -95,7 +97,6 @@ const Header: React.FC = () => {
           </div>
         </nav>
 
-        {/* === Mobile Menu === */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 animate-fade-in">
             <ul className="flex flex-col gap-4 p-4 text-lg font-medium">
@@ -103,21 +104,23 @@ const Header: React.FC = () => {
                 <li key={item.id}>
                   <button
                     onClick={() => scrollToSection(item.id)}
-                    className="text-foreground hover:text-accent transition-colors w-full text-left"
+                    className="text-foreground hover:text-accent transition-colors w-full text-right"
                   >
                     {item.label}
                   </button>
                 </li>
               ))}
               <li>
-                <Button
-                  variant="accent"
-                  size="lg"
-                  className="w-full cursor-pointer"
-                  onClick={() => scrollToSection("designs")}
-                >
-                  شاهد التصاميم
-                </Button>
+                {/* Mobile WhatsApp Button (Green) */}
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="lg"
+                    className="w-full cursor-pointer bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-2 border-none shadow-md"
+                  >
+                    <FaWhatsapp size={22} />
+                    تواصل معنا عبر واتساب
+                  </Button>
+                </a>
               </li>
             </ul>
           </div>
