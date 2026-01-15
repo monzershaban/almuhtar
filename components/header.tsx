@@ -13,7 +13,7 @@ const Header: React.FC = () => {
 
   // --- ضع رقم هاتفك هنا ---
   const whatsappNumber = "+905348939441"; 
-  const whatsappMessage = encodeURIComponent("مرحباً، أود الاستفسار عن التصاميم.");
+  const whatsappMessage = encodeURIComponent("مرحباً المُخْتَار، أريد المزيد من التفاصيل.");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   useEffect(() => {
